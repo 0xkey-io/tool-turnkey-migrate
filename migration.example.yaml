@@ -1,0 +1,27 @@
+source:
+  provider: turnkey
+  apiBaseUrl: https://api.turnkey.com
+  organizationId: $TURNKEY_ORGANIZATION_ID
+  apiPublicKey: $TURNKEY_API_PUBLIC_KEY
+  apiPrivateKey: $TURNKEY_API_PRIVATE_KEY
+
+target:
+  provider: 0xkey
+  # Confirm the HTTPS API origin and signer key through your deployment operator.
+  apiBaseUrl: $ZEROXKEY_API_BASE_URL
+  organizationId: $ZEROXKEY_ORGANIZATION_ID
+  userId: $ZEROXKEY_USER_ID
+  apiPublicKey: $ZEROXKEY_API_PUBLIC_KEY
+  apiPrivateKey: $ZEROXKEY_API_PRIVATE_KEY
+  # Uncompressed P-256 hex public key. Never copy it from an import bundle.
+  signerPublicKey: $ZEROXKEY_SIGNER_PUBLIC_KEY
+
+resources:
+  # Select explicit IDs first. [] selects nothing; "all" selects the full inventory.
+  wallets: []
+  privateKeys: []
+  mnemonicLanguage: MNEMONIC_LANGUAGE_ENGLISH
+
+state:
+  # Create the private parent directory with: mkdir -m 700 migration-state Keep state private and preserve it for recovery.
+  manifestPath: ./migration-state/migration-manifest.json

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+migration.yaml
+migration*.local.yaml
+migration-manifest*.json
+*.lock
+*.tmp
+*.log
+*.tsbuildinfo
+.DS_Store

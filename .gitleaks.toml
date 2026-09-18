@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Generated dependencies, build output, and Git object storage are not source publication inputs"
+paths = [
+  '''(^|/)(node_modules|dist|coverage|\.git)/''',
+]
